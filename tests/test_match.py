@@ -159,20 +159,20 @@ class TestMatch(unittest.TestCase):
         self.assertEqual(s.match('baro'), [1])
 
     def test_bad_anchoring(self):
-        with self.assertRaisesRegexp(ValueError, 'anchoring must be one of.*'):
+        with self.assertRaisesRegex(ValueError, r'anchoring must be one of.*'):
             re2.Set(None)
 
-        with self.assertRaisesRegexp(ValueError, 'anchoring must be one of.*'):
+        with self.assertRaisesRegex(ValueError, r'anchoring must be one of.*'):
             re2.Set(15)
 
-        with self.assertRaisesRegexp(ValueError, 'anchoring must be one of.*'):
+        with self.assertRaisesRegex(ValueError, r'anchoring must be one of.*'):
             re2.Set({})
 
     def test_match_without_compile(self):
         s = re2.Set()
         s.add('foo')
 
-        with self.assertRaisesRegexp(RuntimeError, 'Can\'t match\(\) on an.*'):
+        with self.assertRaisesRegex(RuntimeError, r'Can\'t match\(\) on an.*'):
             s.match('bar')
 
     def test_add_after_compile(self):
@@ -180,8 +180,8 @@ class TestMatch(unittest.TestCase):
         s.add('foo')
         s.compile()
 
-        with self.assertRaisesRegexp(RuntimeError,
-            'Can\'t add\(\) on an already compiled Set'):
+        with self.assertRaisesRegex(RuntimeError,
+            r'Can\'t add\(\) on an already compiled Set'):
             s.add('bar')
 
     # Segfaults on Debain Jessie
@@ -199,7 +199,7 @@ class TestMatch(unittest.TestCase):
     def test_add_with_bad_pattern(self):
         s = re2.Set()
 
-        with self.assertRaisesRegexp(ValueError, 'missing \)'):
+        with self.assertRaisesRegex(ValueError, r'missing \)'):
             s.add('(')
 
         with self.assertRaises(TypeError):

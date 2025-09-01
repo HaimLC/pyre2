@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fb-re2"
+version = "1.0.7"
+description = "Python wrapper for Google's RE2"
+readme = "README.rst"
+license = {text = "BSD"}
+authors = [
+    {name = "David Reiss", email = "dreiss@fb.com"}
+]
+maintainers = [
+    {name = "Siddharth Agarwal", email = "sid0@fb.com"}
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=2.7"
+
+[project.urls]
+Homepage = "https://github.com/facebook/pyre2"
+Repository = "https://github.com/facebook/pyre2"
